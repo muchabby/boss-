@@ -2,18 +2,46 @@
 
 BOSS 直聘招聘助手，基于 web-access CDP 接管浏览器，支持简历筛选、站内沟通、飞书约面三类服务。
 
-## 依赖
+## 前置依赖
 
-- [web-access](https://github.com/eze-is/web-access) — 必须提前安装
-- Node.js 22+
-- Chrome / Chromium（开启远程调试）
+使用前需要完成以下三项安装，每台电脑只需装一次。
+
+### 1. Node.js 22+
+
+下载地址：https://nodejs.org/
+
+安装完成后验证：
+```bash
+node -v  # 应显示 v22.x.x 或更高
+```
+
+### 2. web-access skill
+
+```bash
+git clone https://github.com/eze-is/web-access ~/.claude/skills/web-access
+```
+
+### 3. Chrome 开启远程调试
+
+在 Chrome 地址栏打开 `chrome://inspect/#remote-debugging`，勾选 **Allow remote debugging for this browser instance**。
+
+> 每次重启 Chrome 后需要重新勾选。
+
+---
+
+## 安装本 skill
+
+```bash
+git clone https://github.com/你的账号/leiting-hiring ~/.claude/skills/leiting-hiring
+```
+
+---
 
 ## 快速开始
 
-1. 安装 web-access skill
-2. 在 Chrome 地址栏打开 `chrome://inspect/#remote-debugging`，勾选 Allow remote debugging
-3. 打开并登录 BOSS 直聘招聘者页面
-4. 对 Claude 说：「帮我筛简历」
+1. 完成上方三项前置依赖
+2. 打开并登录 BOSS 直聘招聘者页面（`https://www.zhipin.com/web/chat/index`）
+3. 对 Claude 说：「帮我筛简历」
 
 ## 文件结构
 
