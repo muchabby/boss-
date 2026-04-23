@@ -32,7 +32,7 @@ git clone https://github.com/eze-is/web-access ~/.claude/skills/web-access
 ## 安装本 skill
 
 ```bash
-git clone https://github.com/你的账号/leiting-hiring ~/.claude/skills/leiting-hiring
+git clone https://github.com/muchabby/boss- ~/.claude/skills/leiting-hiring
 ```
 
 ---
