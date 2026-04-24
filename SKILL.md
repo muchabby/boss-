@@ -157,7 +157,8 @@ curl -s http://localhost:3456/targets
 ## 阅读顺序
 
 1. 本文件（SKILL.md）
-2. 按当前服务读取对应 service 文件
-3. 需要浏览器操作时读 browser-rules.md
-4. 需要发消息时读 chat-service.md 中的发送规则
-5. 操作 BOSS 页面前读 site-patterns/zhipin.md
+2. [operating-rules.md](./references/operating-rules.md) — 所有经过验证的操作规则
+3. 按当前服务读取对应 service 文件
+4. 需要浏览器操作时读 browser-rules.md
+5. 需要发消息时读 chat-service.md 中的发送规则
+6. 操作 BOSS 页面前读 site-patterns/zhipin.md
