@@ -46,11 +46,6 @@ node "C:/Users/os_lisy/.claude/skills/web-access/scripts/check-deps.mjs"
 - 通过 → 直接进入下一步，不向用户展示任何提示
 - 失败 → 向用户说明具体原因，引导修复后继续
 
-静默检查至少覆盖：
-- `web-access` 依赖是否可用
-- `GET /targets` 是否可访问
-- 通过 `document.title` 做低成本登录态探针
-
 ### 第四步：确认操作时间窗口
 
 > 默认工作时间为周一至周五 09:30–11:30、13:30–18:00，当前是否在工作时间内？或需要调整时间窗口？
@@ -103,8 +98,6 @@ curl -s http://localhost:3456/targets
 
 不允许用任何方式（`innerText =`、`value =`、`execCommand`、`dispatchEvent`）向输入框写入中文内容。
 
-进入任何 BOSS 站内发送动作前，还必须执行固定发送 recipe：打开候选人线程、校验候选人身份、确认发送目标与候选人一致，再进入实际发送动作。
-
 ---
 
 ## 防封号规则
@@ -150,12 +143,6 @@ curl -s http://localhost:3456/targets
 ## 浏览器操作规则
 
 详见 [browser-rules.md](./references/browser-rules.md)
-
-额外硬规则：
-- BOSS 页面只允许走 `web-access`
-- 截图、OCR、图像理解默认禁止；只有 DOM / CDP 路径按规则失败并且用户明确同意后才可临时启用
-- 不新开 tab、不新建浏览器上下文，只复用已登录 Boss tab
-- `targetId` 变化时先自动重绑定，再做低成本登录态探针
 
 ## 持久化记录
 

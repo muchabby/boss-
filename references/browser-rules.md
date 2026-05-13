@@ -6,8 +6,6 @@
 
 Proxy 地址：`http://localhost:3456`
 
-不要使用 `browser-use` 或其他通用浏览器 skill 接管 BOSS 页面。
-
 ---
 
 ## 点击优先级
@@ -35,19 +33,6 @@ curl -s -X POST "http://localhost:3456/eval?target=ID" --data-raw 'document.titl
 
 ---
 
-## 静默环境检查
-
-进入真实业务前，优先静默检查：
-
-1. `web-access` 依赖可用
-2. `GET /targets` 可访问
-3. 能在现有 target 上执行最小 eval 探针
-4. 通过 `document.title` 做低成本登录态探针
-
-只有检查失败时再提示用户修复。
-
----
-
 ## tab 复用规则
 
 - 只复用用户已登录的 BOSS tab，记录其 `targetId`
@@ -62,10 +47,9 @@ curl -s -X POST "http://localhost:3456/eval?target=ID" --data-raw 'document.titl
 截图默认禁止。
 
 只有同时满足以下条件才允许：
-1. DOM / CDP 主路径已尝试失败
-2. 同一路径内最多又补试 2 次仍失败
-3. 向用户说明了截图的额外风险（token 消耗、风控风险）
-4. 用户明确同意
+1. DOM 路径已尝试失败 2 次以上
+2. 向用户说明了截图的额外风险（token 消耗、风控风险）
+3. 用户明确同意
 
 ---
 
@@ -89,5 +73,3 @@ curl -s -X POST "http://localhost:3456/eval?target=ID" --data-raw 'document.titl
 
 返回「BOSS直聘」或「有新消息啦！」→ 登录态正常。
 返回登录页相关内容 → 提示用户重新登录。
-
-`targetId` 失效或变化时，先重新调用 `/targets` 找新的 Boss target，再做上述探针。
